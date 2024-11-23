@@ -5,9 +5,9 @@ const Form = () => {
   const [forms, setForms] = useState([]);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [gender, setGender] = useState("Male");
+  const [gender, setGender] = useState("female");
   const [contact, setContact] = useState("");
-  const [city, setCity] = useState("New York");
+  const [city, setCity] = useState("lucknow");
   const [dateOfRegister, setDateOfRegister] = useState("");
   const [existingId, setexistingId] = useState(null);
 
@@ -27,9 +27,9 @@ const Form = () => {
     }
     setName("");
     setEmail("");
-    setGender("Male");
+    setGender("female");
     setContact("");
-    setCity("New York");
+    setCity("lucknow");
     setDateOfRegister("");
     fetchForms();
   };
@@ -71,8 +71,8 @@ const Form = () => {
           required
         />
         <select value={gender} onChange={(e) => setGender(e.target.value)}>
-          <option value="Male">Male</option>
-          <option value="Female">Female</option>
+          <option value="female">female</option>
+          <option value="male">male</option>
         </select>
         <input
           type="text"
@@ -82,9 +82,9 @@ const Form = () => {
           required
         />
         <select value={city} onChange={(e) => setCity(e.target.value)}>
-          <option value="New York">New York</option>
-          <option value="Los Angeles">Los Angeles</option>
-          <option value="Chicago">Chicago</option>
+          <option value="lucknow">lucknow</option>
+          <option value="mumbai"> mumbai</option>
+          <option value="delhi">delhi</option>
         </select>
         <input
           type="date"
@@ -98,6 +98,7 @@ const Form = () => {
       <div>
       <table class="table">
   <thead>
+    <tr><h1>SHow DAta</h1></tr>
     <tr>
       <th scope="col">sno</th>
       <th scope="col">name</th>
@@ -119,8 +120,7 @@ const Form = () => {
             <td>{form.city}</td>
             <td>{form.gender}</td>
             <td>{form.dateOfRegister}</td>
-            {/* <td> {new Date(form.dateOfRegister).toLocaleDateString()}{" "}</td> */}
-            <td> <button onClick={() => handleEdit(form)}>Edit</button>{" "}</td>
+            <td> <button onClick={() => handleEdit(form)}>Edit</button></td>
             <td>  <button onClick={() => handleDelete(form._id)}>Delete</button></td>
           </tr>))}
     
